@@ -1,14 +1,21 @@
-# Use a small, secure Nginx image to serve the static site
-FROM nginx:1.27-alpine
+# Use official Nginx image
+FROM nginx:latest
 
-# Copy the static site into Nginx's default html directory
-COPY ./ /usr/share/nginx/html
+# Set the working directory
+WORKDIR /usr/share/nginx/html
 
-# Expose port 80 for HTTP traffic
+# Copy your website files to Nginx's HTML directory
+COPY .  .
+
+# Ensure the default Nginx configuration is removed to avoid conflicts
+RUN rm /etc/nginx/conf.d/default.conf
+
+
+# Copy custom Nginx configuration (optional)
+COPY /default.conf /etc/nginx/conf.d/default.conf
+
+# Expose port 82
 EXPOSE 81
 
-# Simple healthcheck to ensure Nginx is serving content
-HEALTHCHECK --interval=30s --timeout=3s --retries=3 CMD wget -qO- http://localhost/ >/dev/null 2>&1 || exit 1
-
-# Nginx runs as non-root user by default in this image; no CMD override needed
-
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]
