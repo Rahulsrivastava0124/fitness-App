@@ -1,0 +1,21 @@
+# Ignore version control and editor files
+.git
+.gitignore
+.vscode
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Dependencies / caches (if any)
+node_modules
+.pnpm-store
+.cache
+
+# Docker
+Dockerfile*
+!.dockerignore
+
+# OS metadata
+Icon?
