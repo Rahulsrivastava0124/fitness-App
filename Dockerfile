@@ -5,7 +5,7 @@ FROM nginx:1.27-alpine
 COPY ./ /usr/share/nginx/html
 
 # Expose port 80 for HTTP traffic
-EXPOSE 80
+EXPOSE 81
 
 # Simple healthcheck to ensure Nginx is serving content
 HEALTHCHECK --interval=30s --timeout=3s --retries=3 CMD wget -qO- http://localhost/ >/dev/null 2>&1 || exit 1
