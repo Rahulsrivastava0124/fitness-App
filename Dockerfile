@@ -10,5 +10,5 @@ EXPOSE 81
 # Simple healthcheck to ensure Nginx is serving content
 HEALTHCHECK --interval=30s --timeout=3s --retries=3 CMD wget -qO- http://localhost/ >/dev/null 2>&1 || exit 1
 
-# Use Nginx's default startup command
+# Nginx runs as non-root user by default in this image; no CMD override needed
 
