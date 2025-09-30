@@ -1,1 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - AyuamritWellness</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <style>
+      .mobile-menu {
+        transition: all 0.3s ease-in-out;
+        transform-origin: top;
+      }
+      .mobile-menu.hidden {
+        transform: scaleY(0);
+        opacity: 0;
+      }
+      .mobile-menu:not(.hidden) {
+        transform: scaleY(1);
+        opacity: 1;
+      }
+      .mobile-menu-button {
+        transition: all 0.2s ease-in-out;
+      }
+      .mobile-menu-button:hover {
+        transform: scale(1.05);
+      }
+      .mobile-menu a {
+        transition: all 0.2s ease-in-out;
+      }
+      .mobile-menu a:hover {
+        background-color: #f7fee7;
+        transform: translateX(4px);
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Main Navigation (copied from index for consistency) -->
+    <nav class="bg-lime-50 relative sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between py-2 md:py-3">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <img src="./logo.jpg" alt="" srcset="" class="w-20 h-20" />
+            <span class="text-lg md:text-2xl font-bold text-gray-900"
+              >AYUAMRITWELLNESS <span class="text-lime-500">.</span></span
+            >
+          </div>
 
+          <!-- Desktop Social Icons -->
+          <div class="hidden md:flex items-center gap-3 mr-3">
+            <a href="https://www.instagram.com/ayuamritwellness?igsh=MXFkenZkODdramczZw==" target="_blank" rel="noopener" class="text-gray-700 hover:text-lime-500" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M7 2.25h10A4.75 4.75 0 0 1 21.75 7v10A4.75 4.75 0 0 1 17 21.75H7A4.75 4.75 0 0 1 2.25 17V7A4.75 4.75 0 0 1 7 2.25Zm0 1.5A3.25 3.25 0 0 0 3.75 7v10A3.25 3.25 0 0 0 7 20.25h10A3.25 3.25 0 0 0 20.25 17V7A3.25 3.25 0 0 0 17 3.75H7Zm10 2.25a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/></svg>
+            </a>
+            <a href="https://youtube.com/@ayuamritwellness?si=x3w7dLVyIh0JftIy" target="_blank" rel="noopener" class="text-gray-700 hover:text-lime-500" aria-label="YouTube">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7"><path d="M21.582 6.186a3.003 3.003 0 0 0-2.117-2.126C17.86 3.5 12 3.5 12 3.5s-5.86 0-7.465.56A3.003 3.003 0 0 0 2.418 6.186C1.86 7.79 1.86 12 1.86 12s0 4.21.559 5.814a3.003 3.003 0 0 0 2.117 2.126C6.14 20.5 12 20.5 12 20.5s5.86 0 7.465-.56a3.003 3.003 0 0 0 2.117-2.126C22.14 16.21 22.14 12 22.14 12s0-4.21-.559-5.814ZM10 8.75l5.5 3.25L10 15.25V8.75Z"/></svg>
+            </a>
+          </div>
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="./index.html"
+              class="text-gray-900 hover:text-lime-500 transition-colors"
+              >Home</a
+            >
+            <a
+              href="./index.html#about"
+              class="text-gray-900 hover:text-lime-500 transition-colors"
+              >About</a
+            >
+            <a
+              href="./index.html#services"
+              class="text-gray-900 hover:text-lime-500 transition-colors"
+              >Services</a
+            >
+            <a
+              href="./index.html#batches"
+              class="text-gray-900 hover:text-lime-500 transition-colors"
+              >Batches</a
+            >
+            <a
+              href="./contact.html"
+              class="text-lime-500 hover:text-lime-600 transition-colors"
+              >Contact</a
+            >
+          </div>
+
+          <!-- Desktop Free Consultation -->
+          <div
+            class="hidden lg:flex items-center space-x-2 bg-lime-300 rounded-2xl px-4 py-2"
+          >
+            <img src="./Calling V3.gif" alt="" srcset="" class="w-8 h-8" />
+            <div class="flex flex-col">
+              <a href="tel:+917294841393" class="text-black text-base"
+                >+91 72948 41393</a
+              >
+            </div>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button
+              type="button"
+              class="mobile-menu-button bg-lime-50 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-lime-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-lime-500"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="block h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+              <svg
+                class="hidden h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="mobile-menu hidden md:hidden" id="mobile-menu">
+          <div
+            class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white rounded-lg shadow-lg mb-4"
+          >
+            <a
+              href="./index.html"
+              class="text-lime-500 block px-3 py-2 rounded-md text-base font-medium"
+              >Home</a
+            >
+            <a
+              href="./index.html#about"
+              class="text-gray-900 hover:text-lime-500 block px-3 py-2 rounded-md text-base font-medium"
+              >About</a
+            >
+            <a
+              href="./index.html#services"
+              class="text-gray-900 hover:text-lime-500 block px-3 py-2 rounded-md text-base font-medium"
+              >Services</a
+            >
+            <a
+              href="./index.html#batches"
+              class="text-gray-900 hover:text-lime-500 block px-3 py-2 rounded-md text-base font-medium"
+              >Batches</a
+            >
+            <a
+              href="./contact.html"
+              class="text-gray-900 hover:text-lime-500 block px-3 py-2 rounded-md text-base font-medium"
+              >Contact</a
+            >
+            <div class="flex items-center gap-4 px-3 pt-2">
+              <a href="https://www.instagram.com/ayuamritwellness?igsh=MXFkenZkODdramczZw==" target="_blank" rel="noopener" class="text-gray-700 hover:text-lime-500" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M7 2.25h10A4.75 4.75 0 0 1 21.75 7v10A4.75 4.75 0 0 1 17 21.75H7A4.75 4.75 0 0 1 2.25 17V7A4.75 4.75 0 0 1 7 2.25Zm0 1.5A3.25 3.25 0 0 0 3.75 7v10A3.25 3.25 0 0 0 7 20.25h10A3.25 3.25 0 0 0 20.25 17V7A3.25 3.25 0 0 0 17 3.75H7Zm10 2.25a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/></svg>
+              </a>
+              <a href="https://youtube.com/@ayuamritwellness?si=x3w7dLVyIh0JftIy" target="_blank" rel="noopener" class="text-gray-700 hover:text-lime-500" aria-label="YouTube">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7"><path d="M21.582 6.186a3.003 3.003 0 0 0-2.117-2.126C17.86 3.5 12 3.5 12 3.5s-5.86 0-7.465.56A3.003 3.003 0 0 0 2.418 6.186C1.86 7.79 1.86 12 1.86 12s0 4.21.559 5.814a3.003 3.003 0 0 0 2.117 2.126C6.14 20.5 12 20.5 12 20.5s5.86 0 7.465-.56a3.003 3.003 0 0 0 2.117-2.126C22.14 16.21 22.14 12 22.14 12s0-4.21-.559-5.814ZM10 8.75l5.5 3.25L10 15.25V8.75Z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div
+            class="flex items-center space-x-2 bg-white rounded-lg shadow-lg p-4 mb-4"
+          >
+            <img src="./Calling V3.gif" alt="" srcset="" class="w-8 h-8" />
+            <div class="flex flex-col">
+              <span class="font-semibold text-gray-900 text-sm"
+                >Free Consultation</span
+              >
+              <a href="tel:+917294841393" class="text-lime-500 text-base"
+                >+91 72948 41393</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Contact Hero -->
+    <section class="bg-white py-16" data-aos="fade-up" data-aos-duration="800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <span
+            class="text-lime-500 tracking-widest font-medium uppercase mb-3 block"
+            >Contact</span
+          >
+          <h1 class="text-3xl md:text-4xl font-bold text-gray-900">
+            We’re here to help you heal naturally
+          </h1>
+          <p class="text-gray-600 mt-3">
+            Have questions about programs, timing, or your condition? Send a
+            message or reach us on call/WhatsApp. We respond within 24 hours.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section
+      class="py-8 md:py-12 bg-lime-50"
+      data-aos="fade-up"
+      data-aos-duration="800"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          <!-- Left: Details -->
+          <div>
+            <div class="bg-white border rounded-2xl p-6 mb-6">
+              <h2 class="text-xl font-semibold text-gray-900">
+                Quick Contacts
+              </h2>
+              <div class="mt-4 space-y-4">
+                <div class="flex items-center gap-3">
+                  <span
+                    class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-lime-100 text-lime-600"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="w-5 h-5"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M2.25 6.75c0-1.243 1.007-2.25 2.25-2.25h2.087c.99 0 1.86.676 2.098 1.64l.507 2.03a2.25 2.25 0 0 1-.52 2.12l-1.12 1.12a12.035 12.035 0 0 0 5.657 5.657l1.12-1.12a2.25 2.25 0 0 1 2.12-.52l2.03.507a2.25 2.25 0 0 1 1.64 2.098V19.5a2.25 2.25 0 0 1-2.25 2.25H18a15.75 15.75 0 0 1-15.75-15.75v-.75Z"
+                      />
+                    </svg>
+                  </span>
+                  <div>
+                    <div class="text-gray-900 font-medium">Phone</div>
+                    <a href="tel:+917294841393" class="text-lime-600"
+                      >+91 72948 41393</a
+                    >
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span
+                    class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-green-100 text-green-600"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="currentColor"
+                      class="bi bi-whatsapp"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"
+                      />
+                    </svg>
+                  </span>
+                  <div>
+                    <div class="text-gray-900 font-medium">WhatsApp</div>
+                    <a
+                      href="https://wa.me/917294841393"
+                      class="text-lime-600"
+                      target="_blank"
+                      rel="noopener"
+                      >Chat on WhatsApp</a
+                    >
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span
+                    class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-yellow-100 text-yellow-600"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="w-5 h-5"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75S6.615 21.75 12 21.75 21.75 17.385 21.75 12 17.385 2.25 12 2.25ZM4.5 12c0-.62.073-1.222.21-1.8H8.25c.414 0 .75.336.75.75v1.5a.75.75 0 0 0 .75.75h1.5c.414 0 .75.336.75.75v1.5c0 .414.336.75.75.75H16.5c.62 0 1.222-.073 1.8-.21A7.5 7.5 0 1 1 4.5 12Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                  <div>
+                    <div class="text-gray-900 font-medium">Availability</div>
+                    <div class="text-gray-600">
+                      100% online (India + worldwide). Offline healing centre
+                      coming soon.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white border rounded-2xl p-6">
+              <h3 class="text-lg font-semibold text-gray-900">Timings</h3>
+              <p class="text-gray-600 mt-2">
+                Mon–Sat: 6:00 AM – 9:00 PM IST<br />Sun: 8:00 AM – 2:00 PM IST
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: Form -->
+          <div>
+            <div class="bg-white border rounded-2xl p-6">
+              <h2 class="text-xl font-semibold text-gray-900">
+                Send a message
+              </h2>
+              <form
+                class="mt-6 space-y-4"
+                name="contact"
+                method="post"
+                onsubmit="return handleContactSubmit(event)"
+              >
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700"
+                      >Full name<span class="text-red-500">*</span></label
+                    >
+                    <input
+                      type="text"
+                      name="name"
+                      required
+                      minlength="2"
+                      class="mt-1 w-full h-12 px-4 rounded-xl border border-gray-300 focus:ring-lime-500 focus:border-lime-500"
+                      placeholder="Your full name"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700"
+                      >City</label
+                    >
+                    <input
+                      type="text"
+                      name="city"
+                      class="mt-1 w-full h-12 px-4 rounded-xl border border-gray-300 focus:ring-lime-500 focus:border-lime-500"
+                      placeholder="e.g. Delhi"
+                    />
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700"
+                      >Phone<span class="text-red-500">*</span></label
+                    >
+                    <input
+                      type="tel"
+                      name="phone"
+                      required
+                      pattern="^[0-9\s+-]{8,15}$"
+                      class="mt-1 w-full h-12 px-4 rounded-xl border border-gray-300 focus:ring-lime-500 focus:border-lime-500"
+                      placeholder="e.g. 9876543210"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700"
+                      >Email (optional)</label
+                    >
+                    <input
+                      type="email"
+                      name="email"
+                      class="mt-1 w-full h-12 px-4 rounded-xl border border-gray-300 focus:ring-lime-500 focus:border-lime-500"
+                      placeholder="you@example.com"
+                    />
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700"
+                      >Preferred contact</label
+                    >
+                    <select
+                      name="preferred"
+                      class="mt-1 w-full h-12 px-4 rounded-xl border border-gray-300 focus:ring-lime-500 focus:border-lime-500"
+                    >
+                      <option value="whatsapp">WhatsApp</option>
+                      <option value="phone">Phone call</option>
+                      <option value="email">Email</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700"
+                      >Best time to reach</label
+                    >
+                    <select
+                      name="time"
+                      class="mt-1 w-full h-12 px-4 rounded-xl border border-gray-300 focus:ring-lime-500 focus:border-lime-500"
+                    >
+                      <option value="morning">Morning (6–11 AM)</option>
+                      <option value="afternoon">Afternoon (12–4 PM)</option>
+                      <option value="evening">Evening (5–9 PM)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700"
+                    >What do you need help with?<span class="text-red-500"
+                      >*</span
+                    ></label
+                  >
+                  <select
+                    name="topic"
+                    required
+                    class="mt-1 w-full h-12 px-4 rounded-xl border border-gray-300 focus:ring-lime-500 focus:border-lime-500"
+                  >
+                    <option value="weight">
+                      Weight loss / Metabolic health
+                    </option>
+                    <option value="pain">Pain / Physiotherapy rehab</option>
+                    <option value="pcos">PCOD / PCOS / Thyroid</option>
+                    <option value="diabetes">Diabetes / BP control</option>
+                    <option value="stress">Stress / Sleep / Anxiety</option>
+                    <option value="fitness">General fitness & lifestyle</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700"
+                    >Message<span class="text-red-500">*</span></label
+                  >
+                  <textarea
+                    name="message"
+                    rows="5"
+                    required
+                    minlength="10"
+                    class="mt-1 w-full min-h-40 p-4 rounded-xl border border-gray-300 focus:ring-lime-500 focus:border-lime-500"
+                    placeholder="Briefly describe your goals, pain areas or symptoms..."
+                  ></textarea>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <input
+                    id="consent"
+                    type="checkbox"
+                    required
+                    class="mt-1 h-4 w-4 text-lime-600 border-gray-300 rounded"
+                  />
+                  <label for="consent" class="text-sm text-gray-700"
+                    >I agree to be contacted on WhatsApp/phone/email about my
+                    inquiry<span class="text-red-500">*</span></label
+                  >
+                </div>
+
+                <div class="flex flex-wrap gap-3 pt-2">
+                  <button
+                    type="submit"
+                    class="bg-lime-500 hover:bg-lime-600 text-white font-semibold px-6 py-3 rounded-2xl"
+                  >
+                    Send Message
+                  </button>
+                  <a
+                    href="https://wa.me/917294841393"
+                    target="_blank"
+                    rel="noopener"
+                    class="bg-white border hover:bg-gray-50 text-gray-900 font-semibold px-6 py-3 rounded-2xl"
+                    >Chat on WhatsApp</a
+                  >
+                </div>
+
+                <p class="text-xs text-gray-500">
+                  We usually reply within 24 hours. Your data is kept
+                  confidential.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer (simple) -->
+    <footer class="py-10 bg-white border-t">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
+          <div class="text-gray-600 text-sm">
+            © <span id="y"></span> AyuamritWellness. All rights reserved.
+          </div>
+          <div class="text-sm">
+            <a
+              href="./index.html#about"
+              class="text-gray-600 hover:text-lime-600"
+              >About</a
+            >
+            <span class="mx-2 text-gray-300">•</span>
+            <a
+              href="./index.html#services"
+              class="text-gray-600 hover:text-lime-600"
+              >Services</a
+            >
+            <span class="mx-2 text-gray-300">•</span>
+            <a
+              href="./index.html#batches"
+              class="text-gray-600 hover:text-lime-600"
+              >Batches</a
+            >
+          </div>
+        </div>
+      </div>
+      <script>
+        document.getElementById("y").textContent = new Date().getFullYear();
+      </script>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+
+      // Mobile menu toggle (same as index)
+      const mobileMenuButton = document.querySelector(".mobile-menu-button");
+      const mobileMenu = document.querySelector(".mobile-menu");
+      if (mobileMenuButton && mobileMenu) {
+        const menuIcons = mobileMenuButton.querySelectorAll("svg");
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+          menuIcons.forEach((icon) => {
+            icon.classList.toggle("hidden");
+            icon.classList.toggle("block");
+          });
+          const isExpanded = !mobileMenu.classList.contains("hidden");
+          mobileMenuButton.setAttribute("aria-expanded", isExpanded);
+        });
+        document.addEventListener("click", (event) => {
+          if (
+            !mobileMenuButton.contains(event.target) &&
+            !mobileMenu.contains(event.target)
+          ) {
+            mobileMenu.classList.add("hidden");
+            if (menuIcons[0] && menuIcons[1]) {
+              menuIcons[0].classList.remove("hidden");
+              menuIcons[0].classList.add("block");
+              menuIcons[1].classList.add("hidden");
+              menuIcons[1].classList.remove("block");
+            }
+            mobileMenuButton.setAttribute("aria-expanded", "false");
+          }
+        });
+        window.addEventListener("resize", () => {
+          if (window.innerWidth >= 768) {
+            mobileMenu.classList.add("hidden");
+            if (menuIcons[0] && menuIcons[1]) {
+              menuIcons[0].classList.remove("hidden");
+              menuIcons[0].classList.add("block");
+              menuIcons[1].classList.add("hidden");
+              menuIcons[1].classList.remove("block");
+            }
+            mobileMenuButton.setAttribute("aria-expanded", "false");
+          }
+        });
+      }
+
+      function handleContactSubmit(e) {
+        e.preventDefault();
+        const form = e.target;
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return false;
+        }
+
+        const name = form.name?.value?.trim() || "";
+        const city = form.city?.value?.trim() || "";
+        const phone = form.phone?.value?.trim() || "";
+        const email = form.email?.value?.trim() || "";
+        const preferred = form.preferred?.value || "";
+        const time = form.time?.value || "";
+        const topic = form.topic?.options?.[form.topic.selectedIndex]?.text || "";
+        const msg = form.message?.value?.trim() || "";
+
+        const lines = [
+          "New enquiry from website",
+          `Name: ${name}`,
+          city ? `City: ${city}` : null,
+          `Phone: ${phone}`,
+          email ? `Email: ${email}` : null,
+          preferred ? `Preferred: ${preferred}` : null,
+          time ? `Best time: ${time}` : null,
+          topic ? `Topic: ${topic}` : null,
+          "",
+          `Message: ${msg}`,
+        ].filter(Boolean);
+
+        const text = encodeURIComponent(lines.join("\n"));
+        const whatsappNumber = "917294841393"; // without +
+        const waUrl = `https://wa.me/${whatsappNumber}?text=${text}`;
+        window.open(waUrl, "_blank");
+        return false;
+      }
+    </script>
+  </body>
+</html>
