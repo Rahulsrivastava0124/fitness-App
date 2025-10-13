@@ -319,6 +319,15 @@
     .faq-answer {
       transition: all 0.3s ease-in-out;
     }
+
+    /* Responsive button sizing across the site (phones) */
+    @media (max-width: 639px) {
+      a[class*="rounded"], button[class*="rounded"] {
+        padding-left: 0.75rem;  /* px-3 */
+        padding-right: 0.75rem; /* px-3 */
+        font-size: 0.875rem;    /* text-sm */
+      }
+    }
   </style>
   <body>
     <!-- Navbar Start -->
@@ -682,7 +691,7 @@
               class="text-lime-500 tracking-widest font-medium uppercase mb-4 block"
               >About Ayuamrit Wellness</span
             >
-            <h2 class="text-4xl font-bold text-gray-900 mb-6 leading-tight">
+            <h2 class="text-2xl md:ext-4xl font-bold text-gray-900 mb-6 leading-tight">
               Our Unique Approach: Healing with Nature. Guided by Science.
             </h2>
             <p class="text-gray-500 mb-8 text-lg">
@@ -892,7 +901,7 @@
           <!-- Video Card 1 -->
           <div class="bg-white rounded-2xl border overflow-hidden shadow-sm">
             <div class="aspect-video bg-black">
-              <video class="w-full h-full" controls preload="metadata" poster="./images/unnamed (11).jpg">
+              <video class="w-full h-full" controls preload="metadata">
                 <source src="./video/Paralysis  Hand exercise.mp4" type="video/mp4" />
               </video>
             </div>
@@ -901,7 +910,7 @@
           <!-- Video Card 2 -->
           <div class="bg-white rounded-2xl border overflow-hidden shadow-sm">
             <div class="aspect-video bg-black">
-              <video class="w-full h-full" controls preload="metadata" poster="./images/unnamed (12).jpg">
+              <video class="w-full h-full" controls preload="metadata">
                 <source src="./video/Frozen shoulder exercise.mp4" type="video/mp4" />
               </video>
             </div>
@@ -910,7 +919,7 @@
           <!-- Video Card 3 -->
           <div class="bg-white rounded-2xl border overflow-hidden shadow-sm">
             <div class="aspect-video bg-black">
-              <video class="w-full h-full" controls preload="metadata" poster="./images/unnamed (13).jpg">
+              <video class="w-full h-full" controls preload="metadata">
                 <source src="./video/WhatsApp Video 2025-08-18 at 12.06.37_0557ac16.mp4" type="video/mp4" />
               </video>
             </div>
@@ -919,7 +928,7 @@
           <!-- Video Card 4 -->
           <div class="bg-white rounded-2xl border overflow-hidden shadow-sm">
             <div class="aspect-video bg-black">
-              <video class="w-full h-full" controls preload="metadata" poster="./images/unnamed (14).jpg">
+              <video class="w-full h-full" controls preload="metadata">
                 <source src="./video/1.mp4" type="video/mp4" />
               </video>
             </div>
@@ -928,7 +937,7 @@
           <!-- Video Card 5 -->
           <div class="bg-white rounded-2xl border overflow-hidden shadow-sm">
             <div class="aspect-video bg-black">
-              <video class="w-full h-full" controls preload="metadata" poster="./images/unnamed (15).jpg">
+              <video class="w-full h-full" controls preload="metadata">
                 <source src="./video/2.mp4" type="video/mp4" />
               </video>
             </div>
@@ -937,7 +946,7 @@
           <!-- Video Card 6 -->
           <div class="bg-white rounded-2xl border overflow-hidden shadow-sm">
             <div class="aspect-video bg-black">
-              <video class="w-full h-full" controls preload="metadata" poster="./images/unnamed (16).jpg">
+              <video class="w-full h-full" controls preload="metadata">
                 <source src="./video/3.mp4" type="video/mp4" />
               </video>
             </div>
@@ -946,7 +955,7 @@
           <!-- Video Card 7 -->
           <div class="bg-white rounded-2xl border overflow-hidden shadow-sm">
             <div class="aspect-video bg-black">
-              <video class="w-full h-full" controls preload="metadata" poster="./images/unnamed (17).jpg">
+              <video class="w-full h-full" controls preload="metadata">
                 <source src="./video/4.mp4" type="video/mp4" />
               </video>
             </div>
@@ -955,7 +964,7 @@
           <!-- Video Card 8 -->
           <div class="bg-white rounded-2xl border overflow-hidden shadow-sm">
             <div class="aspect-video bg-black">
-              <video class="w-full h-full" controls preload="metadata" poster="./images/unnamed (18).jpg">
+              <video class="w-full h-full" controls preload="metadata">
                 <source src="./video/5.mp4" type="video/mp4" />
               </video>
             </div>
@@ -964,7 +973,7 @@
           <!-- Video Card 9 -->
           <div class="bg-white rounded-2xl border overflow-hidden shadow-sm">
             <div class="aspect-video bg-black">
-              <video class="w-full h-full" controls preload="metadata" poster="./images/unnamed (19).jpg">
+              <video class="w-full h-full" controls preload="metadata">
                 <source src="./video/6.mp4" type="video/mp4" />
               </video>
             </div>
@@ -973,14 +982,7 @@
       </div>
     </section>
     <script>
-      // Simple accordion for FAQ
-      document.querySelectorAll('#faqList > div > button').forEach((btn) => {
-        btn.addEventListener('click', () => {
-          const answer = btn.nextElementSibling;
-          const icon = btn.querySelector('.faq-icon path');
-          answer.classList.toggle('hidden');
-        });
-      });
+      // (moved FAQ listeners to DOMContentLoaded below)
     </script>
 
     
@@ -1616,7 +1618,7 @@
     <!-- Our Special Dish Section End -->
 
     <!-- Diet Plans Section Start -->
-    <section class="py-20 bg-white hidden" data-aos="fade-up" data-aos-duration="1000">
+    <section class="py-20 bg-white" data-aos="fade-up" data-aos-duration="1000">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
           <span
@@ -1978,19 +1980,9 @@
     <!-- START FREE HEALING NOW Section End -->
 
     <!-- Plans & Pricing Section Start -->
-    <section class="py-20 bg-white hidden" data-aos="fade-up" data-aos-duration="1000">
+    <section class="md:py-20 bg-white" data-aos="fade-up" data-aos-duration="1000">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
-          <span class="text-lime-500 tracking-widest font-medium uppercase mb-4 block">
-            HEALING PLANS
-          </span>
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-            Choose Your Healing Journey
-          </h2>
-          <p class="text-gray-600 text-lg max-w-3xl mx-auto">
-            Select the plan that best fits your needs and start your transformation today
-          </p>
-        </div>
+       
 
         <!-- Live Classes Schedule -->
         <div class="mb-16" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
@@ -1999,55 +1991,154 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               <div class="bg-white p-4 rounded-xl shadow-sm">
                 <div class="text-lime-600 font-bold text-sm mb-2">5:30–6:20 AM</div>
-                <div class="font-semibold text-gray-900 mb-1">Pain / Arthritis</div>
-                <div class="text-xs text-gray-600">Senior Citizen & Joint Pain Relief</div>
+                <div class="font-semibold text-gray-900 mb-1">Pain / Arthritis / Senior Citizen</div>
+                <div class="text-xs text-gray-600">Joint pain, arthritis, gentle movement, mobility improvement</div>
               </div>
               <div class="bg-white p-4 rounded-xl shadow-sm">
                 <div class="text-lime-600 font-bold text-sm mb-2">6:30–7:20 AM</div>
-                <div class="font-semibold text-gray-900 mb-1">Weight Loss</div>
-                <div class="text-xs text-gray-600">Metabolic Health & Fat Loss</div>
+                <div class="font-semibold text-gray-900 mb-1">Weight Loss & Metabolic Health</div>
+                <div class="text-xs text-gray-600">Fat loss, diabetes, metabolism boost</div>
               </div>
               <div class="bg-white p-4 rounded-xl shadow-sm">
                 <div class="text-lime-600 font-bold text-sm mb-2">7:30–8:20 AM</div>
-                <div class="font-semibold text-gray-900 mb-1">Fitness & PCOD</div>
-                <div class="text-xs text-gray-600">Full-Body Strength & Hormonal Health</div>
+                <div class="font-semibold text-gray-900 mb-1">Fitness & Full-Body Strength + PCOD/PCOS + Hormonal Health</div>
+                <div class="text-xs text-gray-600">Energy, stamina, muscle tone, women’s hormonal balance</div>
               </div>
               <div class="bg-white p-4 rounded-xl shadow-sm">
                 <div class="text-lime-600 font-bold text-sm mb-2">11:00–11:50 AM</div>
-                <div class="font-semibold text-gray-900 mb-1">Chair Yoga</div>
-                <div class="text-xs text-gray-600">Gentle Stretches for Seniors</div>
+                <div class="font-semibold text-gray-900 mb-1">Chair Yoga & Gentle Stretches</div>
+                <div class="text-xs text-gray-600">Seniors, recovery, limited mobility</div>
               </div>
               <div class="bg-white p-4 rounded-xl shadow-sm">
                 <div class="text-lime-600 font-bold text-sm mb-2">12:00–12:50 PM</div>
-                <div class="font-semibold text-gray-900 mb-1">General Fitness</div>
-                <div class="text-xs text-gray-600">Full-Body Fitness & Weight Loss</div>
+                <div class="font-semibold text-gray-900 mb-1">General Fitness & Weight Loss</div>
+                <div class="text-xs text-gray-600">Full-body fitness, fat loss, active lifestyle</div>
               </div>
               <div class="bg-white p-4 rounded-xl shadow-sm">
                 <div class="text-lime-600 font-bold text-sm mb-2">4:30–5:20 PM</div>
-                <div class="font-semibold text-gray-900 mb-1">PCOD/PCOS</div>
-                <div class="text-xs text-gray-600">Thyroid Balance for Women</div>
+                <div class="font-semibold text-gray-900 mb-1">PCOD/PCOS + Thyroid Balance</div>
+                <div class="text-xs text-gray-600">Hormonal health for women</div>
               </div>
               <div class="bg-white p-4 rounded-xl shadow-sm">
                 <div class="text-lime-600 font-bold text-sm mb-2">7:00–7:50 PM</div>
-                <div class="font-semibold text-gray-900 mb-1">Stress & Sleep</div>
-                <div class="text-xs text-gray-600">Relaxation & Mental Health</div>
+                <div class="font-semibold text-gray-900 mb-1">Stress, Sleep & Anxiety</div>
+                <div class="text-xs text-gray-600">Relaxation, mental health</div>
               </div>
               <div class="bg-white p-4 rounded-xl shadow-sm">
                 <div class="text-lime-600 font-bold text-sm mb-2">8:30–9:10 PM</div>
-                <div class="font-semibold text-gray-900 mb-1">Relaxation</div>
-                <div class="text-xs text-gray-600">Light Mobility & Flexibility</div>
+                <div class="font-semibold text-gray-900 mb-1">Relaxation & Light Mobility</div>
+                <div class="text-xs text-gray-600">Flexibility, unwind before bed</div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Pricing Plans -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <!-- Plans at a Glance (Single, modern summary) -->
+        <div class="mb-12" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Plans at a Glance</h3>
+          <div class="">
+            <div class="flex flex-col gap-6">
+            <!-- Standard Plan Summary Card -->
+            <div class="bg-white rounded-2xl border overflow-hidden shadow-sm min-w-[320px] md:min-w-[420px]">
+              <div class="p-6">
+                <h4 class="text-lg font-bold text-gray-900">Standard Healing Plan <span class="text-gray-500 font-normal">(2 fixed batch timings)</span></h4>
+                <p class="text-xs text-gray-600 mt-1">Perfect for consistent routine</p>
+                <div class="mt-4 bg-lime-50 rounded-xl overflow-hidden">
+                  <div class="grid grid-cols-4 text-xs text-gray-700">
+                    <div class="px-3 py-2 font-semibold">Monthly</div>
+                    <div class="px-3 py-2 font-semibold">3 Months</div>
+                    <div class="px-3 py-2 font-semibold">6 Months</div>
+                    <div class="px-3 py-2 font-semibold">12 Months</div>
+                  </div>
+                  <div class="grid grid-cols-4 text-sm bg-white">
+                    <div class="px-3 py-3">₹2,500</div>
+                    <div class="px-3 py-3">₹7,000</div>
+                    <div class="px-3 py-3">₹12,500</div>
+                    <div class="px-3 py-3">₹23,000</div>
+                  </div>
+                </div>
+                <ul class="mt-4 text-sm text-gray-700 space-y-2">
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-lime-500 rounded-full"></span> 2 fixed batch timings</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-lime-500 rounded-full"></span> 1 diet plan per month</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-lime-500 rounded-full"></span> WhatsApp text support</li>
+                </ul>
+                <a href="tel:+917294841393" class="mt-5 inline-block w-full text-center bg-lime-500 hover:bg-lime-600 text-white font-semibold px-5 sm:px-3 py-3 rounded-xl text-sm sm:text-sm md:text-base">Choose Standard Plan</a>
+              </div>
+            </div>
+
+            <!-- Premium Plan Summary Card -->
+            <div class="bg-white rounded-2xl border overflow-hidden shadow-sm relative min-w-[320px] md:min-w-[420px]">
+              <span class="absolute top-3 right-3 bg-lime-500 text-white text-[10px] px-2 py-1 rounded-full">MOST POPULAR</span>
+              <div class="p-6">
+                <h4 class="text-lg font-bold text-gray-900">Premium Healing Plan <span class="text-gray-500 font-normal">(Any batch + advanced support)</span></h4>
+                <p class="text-xs text-gray-600 mt-1">Maximum flexibility & support</p>
+                <div class="mt-4 bg-lime-50 rounded-xl overflow-hidden">
+                  <div class="grid grid-cols-4 text-xs text-gray-700">
+                    <div class="px-3 py-2 font-semibold">Monthly</div>
+                    <div class="px-3 py-2 font-semibold">3 Months</div>
+                    <div class="px-3 py-2 font-semibold">6 Months</div>
+                    <div class="px-3 py-2 font-semibold">12 Months</div>
+                  </div>
+                  <div class="grid grid-cols-4 text-sm bg-white">
+                    <div class="px-3 py-3">₹3,000</div>
+                    <div class="px-3 py-3">₹8,000</div>
+                    <div class="px-3 py-3">₹15,000 <span class="text-xs text-green-600">(Save ₹3,000)</span></div>
+                    <div class="px-3 py-3">₹25,000</div>
+                  </div>
+                </div>
+                <ul class="mt-4 text-sm text-gray-700 space-y-2">
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-lime-500 rounded-full"></span> Any batch, any time</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-lime-500 rounded-full"></span> Diet updated anytime</li>
+                  <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-lime-500 rounded-full"></span> Direct doctor communication</li>
+                </ul>
+                <a href="tel:+917294841393" class="mt-5 inline-block w-full text-center bg-lime-500 hover:bg-lime-600 text-white font-semibold px-5 sm:px-3 py-3 rounded-xl text-sm sm:text-sm md:text-base">Choose Premium Plan</a>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subscription Summary Table (hidden - replaced by Plans at a Glance) -->
+        <div class="mb-12 hidden" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Subscription Plans</h3>
+          <div class="overflow-x-auto">
+            <table class="min-w-full bg-white rounded-2xl overflow-hidden border">
+              <thead class="bg-lime-50">
+                <tr>
+                  <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">Plan</th>
+                  <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">Monthly</th>
+                  <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">3 Months</th>
+                  <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">6 Months</th>
+                  <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700">12 Months</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-t">
+                  <td class="px-4 py-4 text-sm text-gray-900 font-medium">Standard Healing Plan (2 fixed batch timings)</td>
+                  <td class="px-4 py-4 text-sm text-gray-900">₹2,500</td>
+                  <td class="px-4 py-4 text-sm text-gray-900">₹7,000</td>
+                  <td class="px-4 py-4 text-sm text-gray-900">₹12,500</td>
+                  <td class="px-4 py-4 text-sm text-gray-900">₹23,000</td>
+                </tr>
+                <tr class="border-t">
+                  <td class="px-4 py-4 text-sm text-gray-900 font-medium">Premium Healing Plan (Any batch + advanced support) <span class="ml-2 inline-block text-xs bg-lime-500 text-white px-2 py-0.5 rounded-full align-middle">MOST POPULAR</span></td>
+                  <td class="px-4 py-4 text-sm text-gray-900">₹3,000</td>
+                  <td class="px-4 py-4 text-sm text-gray-900">₹8,000</td>
+                  <td class="px-4 py-4 text-sm text-gray-900">₹15,000 <span class="text-xs text-green-600">(Save ₹3,000)</span></td>
+                  <td class="px-4 py-4 text-sm text-gray-900">₹25,000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Pricing Plans (hidden - detailed cards replaced by summary above) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto hidden">
           <!-- Standard Plan -->
           <div class="bg-white rounded-2xl shadow-lg border-2 border-gray-100 hover:border-lime-200 transition duration-300" data-aos="zoom-in" data-aos-delay="600" data-aos-duration="600">
             <div class="p-8">
               <div class="text-center mb-6">
-                <h3 class="text-2xl font-bold text-gray-900 mb-2">Standard Healing Plan</h3>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Standard Healing Plan (2 fixed batch timings)</h3>
                 <p class="text-gray-600">Perfect for consistent routine</p>
               </div>
               <div class="text-center mb-8">
@@ -2095,7 +2186,7 @@
             </div>
             <div class="p-8">
               <div class="text-center mb-6">
-                <h3 class="text-2xl font-bold text-gray-900 mb-2">Premium Healing Plan</h3>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Premium Healing Plan (Any batch + advanced support)</h3>
                 <p class="text-gray-600">Maximum flexibility & support</p>
               </div>
               <div class="text-center mb-8">
@@ -2141,8 +2232,8 @@
           </div>
         </div>
 
-        <!-- Long-term Plans -->
-        <div class="mt-16" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800">
+        <!-- Long-term Plans (hidden - included in summary above) -->
+        <div class="mt-16 hidden" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800">
           <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Long-term Plans (Save More)</h3>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             <div class="bg-lime-50 rounded-2xl p-6 text-center">
@@ -2172,9 +2263,9 @@
         <!-- What's Included -->
         <div class="mt-16" data-aos="fade-up" data-aos-delay="1200" data-aos-duration="800">
           <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">What's Included in Every Plan</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-              <div class="w-12 h-12 bg-lime-100 rounded-lg flex items-center justify-center mb-4">
+          <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="bg-white rounded-xl p-4 md:p-6 shadow-sm border border-gray-100">
+              <div class="w-8 h-8 md:w-12 md:h-12 bg-lime-100 rounded-lg flex items-center justify-center mb-3 md:mb-4">
                 <svg class="w-6 h-6 text-lime-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
@@ -2182,8 +2273,8 @@
               <h4 class="font-bold text-gray-900 mb-2">Live Yoga & Physiotherapy</h4>
               <p class="text-gray-600 text-sm">Condition-specific sessions with expert guidance</p>
             </div>
-            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-              <div class="w-12 h-12 bg-lime-100 rounded-lg flex items-center justify-center mb-4">
+            <div class="bg-white rounded-xl p-4 md:p-6 shadow-sm border border-gray-100">
+              <div class="w-8 h-8 md:w-12 md:h-12 bg-lime-100 rounded-lg flex items-center justify-center mb-3 md:mb-4">
                 <svg class="w-6 h-6 text-lime-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
@@ -2191,8 +2282,8 @@
               <h4 class="font-bold text-gray-900 mb-2">Diet & Lifestyle Guidance</h4>
               <p class="text-gray-600 text-sm">Easy, home-based nutrition and lifestyle coaching</p>
             </div>
-            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-              <div class="w-12 h-12 bg-lime-100 rounded-lg flex items-center justify-center mb-4">
+            <div class="bg-white rounded-xl p-4 md:p-6 shadow-sm border border-gray-100">
+              <div class="w-8 h-8 md:w-12 md:h-12 bg-lime-100 rounded-lg flex items-center justify-center mb-3 md:mb-4">
                 <svg class="w-6 h-6 text-lime-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                 </svg>
@@ -2200,8 +2291,8 @@
               <h4 class="font-bold text-gray-900 mb-2">WhatsApp Support</h4>
               <p class="text-gray-600 text-sm">24/7 support for all your questions</p>
             </div>
-            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-              <div class="w-12 h-12 bg-lime-100 rounded-lg flex items-center justify-center mb-4">
+            <div class="bg-white rounded-xl p-4 md:p-6 shadow-sm border border-gray-100">
+              <div class="w-8 h-8 md:w-12 md:h-12 bg-lime-100 rounded-lg flex items-center justify-center mb-3 md:mb-4">
                 <svg class="w-6 h-6 text-lime-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
                 </svg>
@@ -2209,8 +2300,8 @@
               <h4 class="font-bold text-gray-900 mb-2">Progress Tracking</h4>
               <p class="text-gray-600 text-sm">Weekly monitoring and adjustment of your plan</p>
             </div>
-            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-              <div class="w-12 h-12 bg-lime-100 rounded-lg flex items-center justify-center mb-4">
+            <div class="bg-white rounded-xl p-4 md:p-6 shadow-sm border border-gray-100">
+              <div class="w-8 h-8 md:w-12 md:h-12 bg-lime-100 rounded-lg flex items-center justify-center mb-3 md:mb-4">
                 <svg class="w-6 h-6 text-lime-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
                 </svg>
@@ -2218,14 +2309,16 @@
               <h4 class="font-bold text-gray-900 mb-2">Home Therapy Guide</h4>
               <p class="text-gray-600 text-sm">Hot/cold packs, stretching, steam therapy</p>
             </div>
-            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-              <div class="w-12 h-12 bg-lime-100 rounded-lg flex items-center justify-center mb-4">
+            <div class="bg-white rounded-xl p-4 md:p-6 shadow-sm border border-gray-100">
+              <div class="w-8 h-8 md:w-12 md:h-12 bg-lime-100 rounded-lg flex items-center justify-center mb-3 md:mb-4">
                 <svg class="w-6 h-6 text-lime-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                 </svg>
               </div>
               <h4 class="font-bold text-gray-900 mb-2">Medicine Guidance</h4>
-              <p class="text-gray-600 text-sm">Ayurveda/Homeopathy/Allopathy support</p>
+              <p class="text-gray-600 text-sm">Ayurveda
+                Homeopathy
+                Allopathy support</p>
             </div>
           </div>
         </div>
@@ -2281,7 +2374,7 @@
                   <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden">
                     <div class="relative">
                       <div class="rounded-t-2xl h-48 relative overflow-hidden">
-                        <video class="w-full h-full object-contain" preload="metadata" poster="./pcod.webp" controls muted>
+                        <video class="w-full h-full object-contain" preload="metadata" controls muted>
                           <source src="./video/1.mp4" type="video/mp4">
                         </video>
                         <!-- <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center pointer-events-none">
@@ -2332,7 +2425,7 @@
                   <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden">
                     <div class="relative">
                       <div class="rounded-t-2xl h-48 relative overflow-hidden">
-                        <video class="w-full h-full object-cover" preload="metadata" poster="./gain-weight.png" controls muted>
+                        <video class="w-full h-full object-cover" preload="metadata" controls muted>
                           <source src="./video/story2.mp4" type="video/mp4">
                         </video>
                         <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center pointer-events-none">
@@ -2383,7 +2476,7 @@
                   <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden">
                     <div class="relative">
                       <div class="rounded-t-2xl h-48 relative overflow-hidden">
-                        <video class="w-full h-full object-cover" preload="metadata" poster="./tyroaid.webp" controls muted>
+                        <video class="w-full h-full object-cover" preload="metadata" controls muted>
                           <source src="./video/story3.mp4" type="video/mp4">
                         </video>
                         <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center pointer-events-none">
@@ -2434,7 +2527,7 @@
                   <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden">
                     <div class="relative">
                       <div class="rounded-t-2xl h-48 relative overflow-hidden">
-                        <video class="w-full h-full object-cover" preload="metadata" poster="./shoulder.jpg" controls muted>
+                        <video class="w-full h-full object-cover" preload="metadata" controls muted>
                           <source src="./video/story4.mp4" type="video/mp4">
                         </video>
                         <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center pointer-events-none">
@@ -2485,7 +2578,7 @@
                   <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden">
                     <div class="relative">
                       <div class="rounded-t-2xl h-48 relative overflow-hidden">
-                        <video class="w-full h-full object-cover" preload="metadata" poster="./diebates.webp" controls muted>
+                        <video class="w-full h-full object-cover" preload="metadata" controls muted>
                           <source src="./video/story5.mp4" type="video/mp4">
                         </video>
                         <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center pointer-events-none">
@@ -2536,7 +2629,7 @@
                   <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden">
                     <div class="relative">
                       <div class="rounded-t-2xl h-48 relative overflow-hidden">
-                        <video class="w-full h-full object-cover" preload="metadata" poster="./infertility.webp" controls muted>
+                        <video class="w-full h-full object-cover" preload="metadata" controls muted>
                           <source src="./video/story6.mp4" type="video/mp4">
                         </video>
                         <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center pointer-events-none">
@@ -2644,6 +2737,14 @@
               <h2 class="text-3xl font-bold text-gray-900 mb-2">Dr. Deepak Kumar</h2>
               <p class="text-xl text-lime-600 font-semibold mb-4">Founder – AyuamritWellness</p>
               <p class="text-lg text-gray-700 mb-6">Pain & Lifestyle Expert | 12+ Years Experience</p>
+            </div>
+
+            <!-- Biography -->
+            <div class="space-y-4 text-gray-700 leading-relaxed mb-8">
+              <p><span class="font-semibold">Dr. Deepak Kumar</span> is the founder of Ayuamrit Wellness. Dr. Deepak is a Naturopathy Doctor, Chiropractor, Yoga Instructor, Neurotherapist, Dietician and Health Entrepreneur, specializing in the holistic healing of lifestyle disorders and pain management.</p>
+              <p>As the Founder of Ayuamrit Wellness, Dr. Deepak combines the principles of <span class="font-medium">Ayurveda, Naturopathy, Yoga, Chiropractic Care, Neurotherapy</span> and <span class="font-medium">Modern Medicine</span> to deliver personalized, result‑oriented treatment plans.</p>
+              <p>With a mission to empower individuals to reverse pain and lifestyle diseases such as <span class="font-medium">PCOD, Obesity, Thyroid Disorders, Diabetes, Back Pain, Neck Pain</span> and stress‑related conditions, he focuses on a natural, sustainable approach that harmonizes ancient wisdom with modern scientific advancements.</p>
+              <p>Through Ayuamrit Wellness, Dr. Deepak is committed to helping people achieve optimal health, improved mobility, and a better quality of life — naturally.</p>
             </div>
 
             <!-- Expertise List -->
@@ -3416,55 +3517,7 @@
           });
         }
 
-        // Auto-generate video posters (thumbnails) from first frame
-        (function generateVideoPosters() {
-          var videos = document.querySelectorAll('.testimonialSwiper video');
-          if (!videos.length) return;
-
-          videos.forEach(function (video) {
-            // Skip if a real poster is already provided
-            var hasPoster = video.getAttribute('poster');
-            if (hasPoster && hasPoster.indexOf('data:image') === 0) {
-              return; // Already auto-set
-            }
-
-            var capture = function () {
-              try {
-                var targetTime = Math.min(1, (video.duration || 1) / 3);
-                var onSeeked;
-                onSeeked = function () {
-                  var canvas = document.createElement('canvas');
-                  var width = video.videoWidth || 640;
-                  var height = video.videoHeight || 360;
-                  canvas.width = width;
-                  canvas.height = height;
-                  var ctx = canvas.getContext('2d');
-                  try { ctx.drawImage(video, 0, 0, width, height); } catch (_) {}
-                  try {
-                    var dataURL = canvas.toDataURL('image/jpeg', 0.7);
-                    if (dataURL) video.setAttribute('poster', dataURL);
-                  } catch (_) {}
-                  video.pause();
-                  try { video.currentTime = 0; } catch (_) {}
-                  video.removeEventListener('seeked', onSeeked);
-                };
-                video.addEventListener('seeked', onSeeked);
-                try { video.currentTime = targetTime; } catch (_) {
-                  // Fallback: if seeking fails immediately, try once on loadeddata
-                }
-              } catch (_) {}
-            };
-
-            if (video.readyState >= 2) {
-              capture();
-            } else {
-              video.addEventListener('loadeddata', function onLoaded() {
-                video.removeEventListener('loadeddata', onLoaded);
-                capture();
-              });
-            }
-          });
-        })();
+        // Disabled auto-poster generation to show only videos without thumbnails
       });
 
       // Handle button hover states
@@ -3507,26 +3560,26 @@
         }
       });
 
-      // FAQ Accordion functionality
-      const faqQuestions = document.querySelectorAll('.faq-question');
-      
-      faqQuestions.forEach(question => {
-        question.addEventListener('click', () => {
-          const faqItem = question.parentElement;
-          const answer = faqItem.querySelector('.faq-answer');
-          const icon = question.querySelector('.faq-icon');
-          
-          // Close all other FAQ items
-          document.querySelectorAll('.faq-answer').forEach(item => {
-            if (item !== answer) {
-              item.classList.add('hidden');
-              item.parentElement.querySelector('.faq-icon').classList.remove('rotate-180');
-            }
+      // FAQ Accordion functionality (one open at a time)
+      const faqListButtons = document.querySelectorAll('#faqList > div > button');
+      faqListButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const answer = btn.nextElementSibling;
+          const icon = btn.querySelector('.faq-icon');
+          if (!answer) return;
+
+          // Close all other answers
+          document.querySelectorAll('#faqList > div > div').forEach(el => {
+            if (el !== answer) el.classList.add('hidden');
           });
-          
-          // Toggle current FAQ item
+          // Reset all other icons
+          document.querySelectorAll('#faqList .faq-icon').forEach(ic => {
+            if (ic !== icon) ic.classList.remove('rotate-180');
+          });
+
+          // Toggle current
           answer.classList.toggle('hidden');
-          icon.classList.toggle('rotate-180');
+          if (icon) icon.classList.toggle('rotate-180');
         });
       });
 
