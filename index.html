@@ -275,6 +275,7 @@
       max-width: 100vw;
      
     }
+    html { scroll-behavior: smooth; }
     [data-aos] {
       will-change: transform, opacity;
       max-width: 100%;
@@ -385,9 +386,9 @@
           <!-- Desktop Menu -->
           <div class="hidden md:flex space-x-8">
             <a href="./index.html" class="text-lime-500 hover:text-lime-600 transition-colors">Home</a>
-            <a href="#about" class="text-gray-900 hover:text-lime-500 transition-colors">About</a>
-            <a href="#services" class="text-gray-900 hover:text-lime-500 transition-colors">Services</a>
-            <a href="#batches" class="text-gray-900 hover:text-lime-500 transition-colors">Batches</a>
+            <a href="#about" class="nav-link text-gray-900 hover:text-lime-500 transition-colors" data-target="#about">About</a>
+            <a href="#services" class="nav-link text-gray-900 hover:text-lime-500 transition-colors" data-target="#services">Services</a>
+            <a href="#batches" class="nav-link text-gray-900 hover:text-lime-500 transition-colors" data-target="#batches">Batches</a>
             <a href="./contact.html" class="text-gray-900 hover:text-lime-500 transition-colors">Contact</a>
           </div>
 
@@ -508,7 +509,7 @@
             >Ayuamrit Wellness</span
           >
           <h1
-            class="text-2xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight"
+            class="text-xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight"
           >
             Natural Healing, Lasting Balance
             <br />
@@ -519,7 +520,7 @@
           </p>
           <p class="text-gray-600 mb-4">PCOD, Thyroid, Obesity, Diabetes, Pain, Stress – these are not lifelong diseases. They are signals. Let's heal them from the root.</p>
           <div class="flex items-center gap-4 mb-8">
-            <ul class="ml-8 space-y-1 mt-2">
+            <ul class="ml-2 md:ml-8 space-y-1 mt-2 text-sm md:text-base">
               <li class="flex items-center gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -575,7 +576,7 @@
                   Yoga
                 </li>
               </ul>
-              <ul>
+              <ul class="ml-2 md:ml-8 space-y-1 mt-2 text-sm md:text-base">
                 <li class="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -674,7 +675,7 @@
     <!-- Hero Section End -->
 
       <!-- About Nutritist Section Start -->
-      <section class="bg-white  md:py-20" data-aos="fade-up" data-aos-duration="1000">
+      <section id="about" class="bg-white  md:py-20" data-aos="fade-up" data-aos-duration="1000">
         <div
           class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12"
         >
@@ -3727,6 +3728,19 @@
           menuIcons[1].classList.remove('block');
           mobileMenuButton.setAttribute('aria-expanded', 'false');
         }
+      });
+
+      // Smooth scroll for nav links (desktop)
+      document.querySelectorAll('.nav-link[data-target]').forEach(link => {
+        link.addEventListener('click', (e) => {
+          const sel = link.getAttribute('data-target');
+          const target = document.querySelector(sel);
+          if (target) {
+            e.preventDefault();
+            const top = target.getBoundingClientRect().top + window.pageYOffset - 80; // account for sticky nav
+            window.scrollTo({ top, behavior: 'smooth' });
+          }
+        });
       });
     </script>
     <!-- Fixed Vertical Button Group Start -->
